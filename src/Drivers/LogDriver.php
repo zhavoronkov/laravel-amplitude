@@ -36,7 +36,7 @@ class LogDriver implements AmplitudeDriverInterface
 
     public function sendEvent($name, $properties)
     {
-        $this->logger->info(sprintf(
+        $this->logger->debug(sprintf(
             'Laravel Amplitude - Event Sent - %s - Properties: %s',
             $name,
             json_encode($properties)
@@ -45,7 +45,7 @@ class LogDriver implements AmplitudeDriverInterface
 
     public function queueEvent($name, $properties)
     {
-        $this->logger->info(sprintf(
+        $this->logger->debug(sprintf(
             'Laravel Amplitude - Event Queued - %s - Properties: %s',
             $name,
             json_encode($properties)
@@ -54,7 +54,7 @@ class LogDriver implements AmplitudeDriverInterface
 
     public function sendQueuedEvents()
     {
-        $this->logger->info('Laravel Amplitude - Sent all previously queued events');
+        $this->logger->debug('Laravel Amplitude - Sent all previously queued events');
     }
 
     public function getDriverName()
